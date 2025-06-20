@@ -21,6 +21,7 @@ export default function App() {
         const foundGame = gamesData.find(
           (g: GameData) => g.slug === game.split(" ").join("%20")
         );
+        setIsOpen(true);
         setCurrentGame(foundGame || undefined);
       } else {
         setCurrentGame(undefined);
