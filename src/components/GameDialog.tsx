@@ -73,12 +73,60 @@ export const GameDialog = ({
                 <strong className="text-slate-600">Genre:</strong> {game.genre}
               </div>
               <div className="space-y-1 flex flex-wrap gap-2">
+                <strong className="text-slate-600">Developer:</strong>
+                {game.devs &&
+                  game.devs.map((dev, index) => (
+                    <span
+                      key={index}
+                      className="text-slate-600 hover:text-slate-900"
+                    >
+                      {dev.link ? (
+                        <a
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          href={dev.link}
+                          className="ml-1 text-blue-500 hover:underline"
+                        >
+                          {dev.name}
+                        </a>
+                      ) : (
+                        dev.name
+                      )}
+                    </span>
+                  ))}
+              </div>
+              <div className="space-y-1 flex flex-wrap gap-2">
+                <strong className="text-slate-600">Publisher:</strong>
+                {game.publishers &&
+                  game.publishers.map((publisher, index) => (
+                    <span
+                      key={index}
+                      className="text-slate-600 hover:text-slate-900"
+                    >
+                      {publisher.link ? (
+                        <a
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          href={publisher.link}
+                          className="ml-1 text-blue-500 hover:underline"
+                        >
+                          {publisher.name}
+                        </a>
+                      ) : (
+                        publisher.name
+                      )}
+                    </span>
+                  ))}
+              </div>
+              <div className="space-y-1 flex flex-wrap gap-2 items-center">
+                <strong className="text-slate-600">Platforms:</strong>
                 {game.platforms &&
                   game.platforms.map((platform, index) => (
                     <Platform type={platform} key={index} />
                   ))}
               </div>
-              <div className="space-y-1 flex flex-wrap gap-2">
+              <div className="space-y-1 flex flex-wrap gap-2 items-center">
+                <strong className="text-slate-600">Available on:</strong>
                 {game.storeLinks &&
                   game.storeLinks.map((storeLink, index) => {
                     return (
