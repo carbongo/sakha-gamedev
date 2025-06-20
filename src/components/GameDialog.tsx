@@ -67,7 +67,7 @@ export const GameDialog = ({
                 className="w-full h-48 object-cover rounded-xl"
               />
               <h2 className="text-xl font-bold">{game.title}</h2>
-              <p className="text-slate-600 line-clamp-3">{game.description}</p>
+              <p className="text-slate-600">{game.description}</p>
 
               <div>
                 <strong className="text-slate-600">Genre:</strong> {game.genre}

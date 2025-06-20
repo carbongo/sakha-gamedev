@@ -13,9 +13,11 @@ Visit the webpage at [carbongo.space/sakha-gamedev/](https://carbongo.space/sakh
 - [x] Game details page
 - [x] Responsive design
 - [ ] Multilingual support (Sakha, Russian)
+- [ ] SEO meta-tags support
 - [ ] Filter games by category, authors, platforms, and tags
 - [ ] Sort games by name, and release date.
 - [ ] Search games by name or description functionality
+- [ ] Contributors list
 - [ ] Dark mode support
 
 ## What lead to this project?
