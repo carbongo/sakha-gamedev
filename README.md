@@ -1,5 +1,7 @@
 # Sakha GameDev
 
+[Русский](./readme/README-russian.md)
+
 A community-driven list of games made by Sakha developers.
 Support our Sakha developers by playing their games and sharing your feedback!
 
