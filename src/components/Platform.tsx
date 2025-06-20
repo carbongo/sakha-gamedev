@@ -8,7 +8,7 @@ export const Platform = ({ type, ...props }: Platform) => {
   return (
     <div
       className={clsx([
-        "inline-block text-slate-600 bg-slate-100 p-2 rounded-lg",
+        "inline-block text-slate-600 bg-slate-100 p-2 rounded-lg m-0",
         (type.includes("PC") ||
           type.includes("Mac") ||
           type.includes("Linux")) &&

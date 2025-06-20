@@ -10,18 +10,7 @@ export const StoreLink = ({ type, link, ...props }: StoreLink) => {
     <a href={link} target="_blank" rel="noopener noreferrer">
       <div
         className={clsx([
-          "inline-block text-slate-600 bg-slate-100 p-2 rounded-lg",
-          (type.includes("PC") ||
-            type.includes("Mac") ||
-            type.includes("Linux")) &&
-            "!bg-slate-100",
-          (type.includes("Android") || type.includes("iOS")) && "!bg-sky-100",
-          (type.includes("Xbox") ||
-            type.includes("PlayStation") ||
-            type.includes("Nintendo")) &&
-            "!bg-blue-100",
-          (type.includes("AR") || type.includes("VR") || type.includes("XR")) &&
-            "!bg-indigo-100",
+          "inline-block text-slate-100 bg-slate-800 p-2 rounded-lg m-0",
         ])}
         {...props}
       >
