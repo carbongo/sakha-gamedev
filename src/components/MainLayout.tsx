@@ -7,34 +7,20 @@ interface MainLayout extends React.HTMLAttributes<HTMLDivElement> {
 export const MainLayout = ({ children, ...props }: MainLayout) => {
   return (
     <div
-      className="flex flex-col h-screen bg-slate-100 px-4 w-screen gap-4"
+      className="flex flex-col min-h-screen bg-slate-100 m-0 w-full"
       {...props}
     >
-      <main className="flex-1 overflow-y-auto m-0 p-0">
-        <header className="flex flex-col gap-2 p-4">
-          <h1 className="text-2xl font-bold text-center">Sakha GameDev</h1>
-          <p className="text-center text-slate-600">
-            A community-driven list of games made by Sakha developers.
-            <br /> Support our Sakha developers by playing their games and
-            sharing your feedback!
-          </p>
-        </header>
-        <div className="container mx-auto py-4">{children}</div>
-      </main>
-      <footer className="text-center text-sm text-slate-600 flex gap-2 flex-col p-2">
-        {/* <nav className="text-center flex gap-2 justify-center">
-          <a href="/" className="text-slate-900 hover:underline mx-2">
-            Our Games
-          </a>
-          <a href="#about" className="text-slate-900 hover:underline mx-2">
-            About Us
-          </a>
-          <a href="#contribute" className="text-slate-900 hover:underline mx-2">
-            Contribute
-          </a>
-        </nav> */}
+      <header className="flex flex-col gap-2 p-8 text-center">
+        <h1 className="text-2xl font-bold text-center flex items-center gap-2 justify-center">
+          Sakha GameDev<small className="text-sm text-slate-400">beta</small>
+        </h1>
+        <p className="text-center text-slate-600">
+          A community-driven list of games made by Sakha developers.
+          <br /> Support our Sakha developers by playing their games and sharing
+          your feedback!
+        </p>
         <p>
-          @ {new Date().getFullYear()} Sakha GameDev Community. Contribute on{" "}
+          Contribute on{" "}
           <a
             target="_blank"
             rel="noopener noreferrer"
@@ -43,9 +29,11 @@ export const MainLayout = ({ children, ...props }: MainLayout) => {
           >
             GitHub
           </a>
-          .
         </p>
-      </footer>
+      </header>
+      <main className="flex-1 m-0 p-0">
+        <div className="container mx-auto p-4">{children}</div>
+      </main>
     </div>
   );
 };
