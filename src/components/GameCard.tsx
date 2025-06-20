@@ -11,7 +11,7 @@ export const GameCard = ({ game, ...props }: GameCardProps) => {
   const gameRoot = import.meta.env.BASE_URL + "games/" + game.slug + "/";
   return (
     <div
-      className="bg-white rounded-3xl shadow-md overflow-hidden hover:shadow-lg transition-shadow"
+      className="bg-white rounded-3xl shadow-md overflow-hidden hover:shadow-lg transition-shadow cursor-pointer outline-1 outline-slate-200 hover:outline-2"
       {...props}
     >
       <div className="p-6 flex flex-col gap-4">

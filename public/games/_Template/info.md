@@ -1,7 +1,7 @@
 ---
 title: Title of the Game
 description: A short description of the game, highlighting its uniqueness and gameplay mechanics.
-released: TBA
+released: 2023-10-01
 genre: Action, Adventure, RPG
 tags:
   - Action
