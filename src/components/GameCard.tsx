@@ -22,6 +22,9 @@ export const GameCard = ({ game, ...props }: GameCardProps) => {
         />
         <h2 className="text-xl font-bold">{game.title}</h2>
         <p className="text-slate-600 line-clamp-3">{game.description}</p>
+        <p className="text-slate-400 line-clamp-3">
+          {game.devs && game.devs.map((dev) => dev.name)}
+        </p>
       </div>
     </div>
   );

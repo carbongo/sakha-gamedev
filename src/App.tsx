@@ -49,13 +49,18 @@ export default function App() {
   return (
     <MainLayout>
       <GameList>
-        {gamesData.map((game: GameData, index) => (
-          <GameCard
-            {...{ game }}
-            onClick={() => onGameCardClick(game)}
-            key={index}
-          />
-        ))}
+        {gamesData.map((game: GameData, index) => {
+          if (game.slug === "_Template") {
+            return null; // Skip placeholder games
+          }
+          return (
+            <GameCard
+              {...{ game }}
+              onClick={() => onGameCardClick(game)}
+              key={index}
+            />
+          );
+        })}
       </GameList>
       <GameDialog game={currentGame} {...{ handleCloseDialog, isOpen }} />
     </MainLayout>
