@@ -14,8 +14,8 @@ export const Header = () => {
         Support our Sakha developers by playing their games and sharing your
         feedback!
       </p>
-      <nav className="flex gap-4">
-        <div>
+      <nav className="flex gap-4 justify-between">
+        <div className="flex gap-4">
           <Button href="https://t.me/gamedev_yakutia" iconRight={SiTelegram}>
             Community on Telegram
           </Button>
