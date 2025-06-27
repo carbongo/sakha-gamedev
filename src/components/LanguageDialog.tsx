@@ -39,6 +39,15 @@ const LanguageDialog = ({
         </Button>
         <Button
           onClick={() => {
+            i18n.changeLanguage("sah");
+            onClose();
+          }}
+          appearance="secondary"
+        >
+          Сахалыы
+        </Button>
+        <Button
+          onClick={() => {
             i18n.changeLanguage("ru");
             onClose();
           }}
