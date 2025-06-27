@@ -11,11 +11,12 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@icons-pack/react-simple-icons": "^13.2.0",
+    "@nine-thirty-five/material-symbols-react": "^1.18.1",
     "@tailwindcss/vite": "^4.1.10",
     "luxon": "^3.6.1",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
-    "simple-icons": "^15.3.0",
     "tailwindcss": "^4.1.10"
   },
   "devDependencies": {
