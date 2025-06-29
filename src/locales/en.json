@@ -8,5 +8,8 @@
       "github": "Contribute on GitHub"
     },
     "beta": "beta"
+  },
+  "gamecard": {
+    "imgAlt": "Game Image"
   }
 }

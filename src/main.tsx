@@ -30,8 +30,9 @@ const i18nAlly = new I18nAllyClient({
     });
   },
   lowerCaseLng: true,
-  onInited(...args) {
-    console.log(args, "onInited");
+  onInited() {
+    // onInited(...args) {
+    //   console.log(args, "onInited");
     root.render(
       <React.StrictMode>
         <App />
