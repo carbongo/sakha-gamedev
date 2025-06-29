@@ -1,0 +1,15 @@
+{
+  "languageName": "English",
+  "header": {
+    "title": "Sakha GameDev",
+    "description": "A community-driven list of games made by Sakha developers.\nSupport our Sakha developers by playing their games and sharing your feedback!",
+    "links": {
+      "telegram": "Community on Telegram",
+      "github": "Contribute on GitHub"
+    },
+    "beta": "beta"
+  },
+  "gamecard": {
+    "imgAlt": "Game Image"
+  }
+}
