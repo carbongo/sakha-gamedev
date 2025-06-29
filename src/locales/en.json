@@ -9,7 +9,12 @@
     },
     "beta": "beta"
   },
-  "gamecard": {
-    "imgAlt": "Game Image"
+  "game": {
+    "imgAlt": "Image",
+    "title": "Title",
+    "description": "Description",
+    "genre": "Genre",
+    "developer": "Developer",
+    "publisher": "Publisher"
   }
 }

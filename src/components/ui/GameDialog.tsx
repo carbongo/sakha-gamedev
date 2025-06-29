@@ -1,7 +1,9 @@
+import type { GameData } from "@/types";
+import { Platform } from "@elements/Platform";
+import { StoreLink } from "@elements/StoreLink";
+
+import { useTranslation } from "react-i18next";
 import clsx from "clsx";
-import type { GameData } from "../types";
-import { Platform } from "./Platform";
-import { StoreLink } from "./StoreLink";
 
 interface GameDialogProps extends React.HTMLAttributes<HTMLDivElement> {
   game?: GameData;
@@ -16,6 +18,7 @@ export const GameDialog = ({
   ...props
 }: GameDialogProps) => {
   const gameRoot = import.meta.env.BASE_URL + "games/" + game?.slug + "/";
+  const { t } = useTranslation();
 
   return (
     <>
@@ -63,17 +66,24 @@ export const GameDialog = ({
                     ? gameRoot + game.image
                     : "/placeholder.png"
                 }
-                alt={game.title || "Game Image"}
+                alt={game.title || t("game.imgAlt")}
                 className="w-full h-48 object-cover rounded-xl"
               />
-              <h2 className="text-xl font-bold">{game.title}</h2>
-              <p className="text-slate-600">{game.description}</p>
+              <h2 className="text-xl font-bold" title={t("game.title")}>
+                {game.title}
+              </h2>
+              <p className="text-slate-600" title={t("game.description")}>
+                {game.description}
+              </p>
 
               <div>
-                <strong className="text-slate-600">Genre:</strong> {game.genre}
+                <strong className="text-slate-600">{t("game.genre")}:</strong>{" "}
+                {game.genre}
               </div>
               <div className="space-y-1 flex flex-wrap gap-2">
-                <strong className="text-slate-600">Developer:</strong>
+                <strong className="text-slate-600">
+                  {t("game.developer")}:
+                </strong>
                 {game.devs &&
                   game.devs.map((dev, index) => (
                     <span
@@ -96,7 +106,9 @@ export const GameDialog = ({
                   ))}
               </div>
               <div className="space-y-1 flex flex-wrap gap-2">
-                <strong className="text-slate-600">Publisher:</strong>
+                <strong className="text-slate-600">
+                  {t("game.publisher")}:
+                </strong>
                 {game.publishers &&
                   game.publishers.map((publisher, index) => (
                     <span

@@ -1,6 +1,6 @@
 import clsx from "clsx";
 import { useTranslation } from "react-i18next";
-import Button from "./Button";
+import Button from "@elements/Button";
 
 const LanguageDialog = ({
   open,

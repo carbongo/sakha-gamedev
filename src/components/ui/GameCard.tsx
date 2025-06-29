@@ -1,5 +1,5 @@
 import { useTranslation } from "react-i18next";
-import type { GameData } from "../types";
+import type { GameData } from "@/types";
 import { DateTime } from "luxon";
 
 interface GameCardProps extends React.HTMLAttributes<HTMLDivElement> {
@@ -23,7 +23,7 @@ export const GameCard = ({ game, ...props }: GameCardProps) => {
           {game.image && (
             <img
               src={game.image ? gameRoot + game.image : "/placeholder.png"}
-              alt={game.title || t("gamecard.imgAlt")}
+              alt={game.title || t("game.imgAlt")}
               className="w-full h-48 object-cover rounded-xl"
             />
           )}

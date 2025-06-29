@@ -1,11 +1,11 @@
 import { SiGithub, SiTelegram } from "@icons-pack/react-simple-icons";
-import Button from "./Button";
+import Button from "@elements/Button";
 import {
   ArrowDropDown,
   Translate,
 } from "@nine-thirty-five/material-symbols-react/outlined";
 import { useTranslation } from "react-i18next";
-import LanguageDialog from "./LanguageDialog";
+import LanguageDialog from "@ui/LanguageDialog";
 import { useState } from "react";
 
 export const Header = () => {

@@ -1,13 +1,13 @@
 // src/App.tsx
 import type { GameData } from "./types";
 
-import { MainLayout } from "./components/MainLayout";
-import { GameList } from "./components/GameList";
-import { GameCard } from "./components/GameCard";
+import { MainLayout } from "@layout/MainLayout";
+import { GameList } from "@layout/GameList";
+import { GameCard } from "@ui/GameCard";
+import { GameDialog } from "@ui/GameDialog";
 
 import gamesData from "./data/games.json";
 import { useEffect, useState } from "react";
-import { GameDialog } from "./components/GameDialog";
 
 export default function App() {
   const [currentGame, setCurrentGame] = useState<GameData>();
