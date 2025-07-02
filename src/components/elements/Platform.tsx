@@ -1,29 +1,35 @@
-import clsx from "clsx";
+import {
+  SiAndroid,
+  SiApple,
+  SiIos,
+  SiLinux,
+  SiPcgamingwiki,
+  SiPlaystation,
+} from "@icons-pack/react-simple-icons";
+import { useMemo } from "react";
 
-interface Platform extends React.HTMLAttributes<HTMLDivElement> {
+interface Platform {
   type: string;
 }
 
-export const Platform = ({ type, ...props }: Platform) => {
+export const Platform = ({ type }: Platform) => {
+  const IconComponent = useMemo(() => {
+    if (type.includes("Linux")) return SiLinux;
+    if (type.includes("PC")) return SiPcgamingwiki;
+    if (type.includes("Mac")) return SiApple;
+    if (type.includes("Android")) return SiAndroid;
+    if (type.includes("iOS")) return SiIos;
+    // if (type.includes("Xbox")) return SiXbox;
+    if (type.includes("PlayStation")) return SiPlaystation;
+    // if (type.includes("Nintendo")) return SiNintendo;
+    return null;
+  }, [type]);
+
   return (
-    <div
-      className={clsx([
-        "inline-block text-slate-600 bg-slate-100 p-2 rounded-lg m-0",
-        (type.includes("PC") ||
-          type.includes("Mac") ||
-          type.includes("Linux")) &&
-          "!bg-slate-100",
-        (type.includes("Android") || type.includes("iOS")) && "!bg-sky-100",
-        (type.includes("Xbox") ||
-          type.includes("PlayStation") ||
-          type.includes("Nintendo")) &&
-          "!bg-blue-100",
-        (type.includes("AR") || type.includes("VR") || type.includes("XR")) &&
-          "!bg-indigo-100",
-      ])}
-      {...props}
-    >
-      {type}
-    </div>
+    <>
+      {IconComponent && (
+        <IconComponent className="text-slate-500" title={type} />
+      )}
+    </>
   );
 };

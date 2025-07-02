@@ -1,9 +1,11 @@
 import type { GameData } from "@/types";
-import { Platform } from "@elements/Platform";
-import { StoreLink } from "@elements/StoreLink";
-
+import { Typography } from "@elements/Typography";
 import { useTranslation } from "react-i18next";
 import clsx from "clsx";
+import { MetaInfo } from "../elements/MetaInfo";
+import { Link } from "../elements/Link";
+import React from "react";
+import { Platform } from "../elements/Platform";
 
 interface GameDialogProps extends React.HTMLAttributes<HTMLDivElement> {
   game?: GameData;
@@ -69,77 +71,76 @@ export const GameDialog = ({
                 alt={game.title || t("game.imgAlt")}
                 className="w-full h-48 object-cover rounded-xl"
               />
-              <h2 className="text-xl font-bold" title={t("game.title")}>
+              <Typography
+                xl
+                bold
+                title={t("game.title")}
+                className="text-slate-900"
+              >
                 {game.title}
-              </h2>
-              <p className="text-slate-600" title={t("game.description")}>
+              </Typography>
+              <Typography
+                base
+                normal
+                title={t("game.description")}
+                className="text-slate-600"
+              >
                 {game.description}
-              </p>
+              </Typography>
 
-              <div>
-                <strong className="text-slate-600">{t("game.genre")}:</strong>{" "}
-                {game.genre}
-              </div>
-              <div className="space-y-1 flex flex-wrap gap-2">
-                <strong className="text-slate-600">
-                  {t("game.developer")}:
-                </strong>
+              <MetaInfo title={t("game.genre")}>{game.genre}</MetaInfo>
+              <MetaInfo title={t("game.developer")}>
                 {game.devs &&
                   game.devs.map((dev, index) => (
-                    <span
-                      key={index}
-                      className="text-slate-600 hover:text-slate-900"
-                    >
+                    <React.Fragment key={index}>
                       {dev.link ? (
-                        <a
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          href={dev.link}
-                          className="ml-1 text-blue-500 hover:underline"
-                        >
+                        <>
                           {dev.name}
-                        </a>
+                          {` `}
+                          <Link
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            href={dev.link}
+                          >
+                            (website)
+                          </Link>
+                        </>
                       ) : (
                         dev.name
                       )}
-                    </span>
+                    </React.Fragment>
                   ))}
-              </div>
-              <div className="space-y-1 flex flex-wrap gap-2">
-                <strong className="text-slate-600">
-                  {t("game.publisher")}:
-                </strong>
+              </MetaInfo>
+              <MetaInfo title={t("game.publisher")}>
                 {game.publishers &&
                   game.publishers.map((publisher, index) => (
-                    <span
-                      key={index}
-                      className="text-slate-600 hover:text-slate-900"
-                    >
+                    <React.Fragment key={index}>
                       {publisher.link ? (
-                        <a
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          href={publisher.link}
-                          className="ml-1 text-blue-500 hover:underline"
-                        >
+                        <>
                           {publisher.name}
-                        </a>
+                          {` `}
+                          <Link
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            href={publisher.link}
+                          >
+                            (website)
+                          </Link>
+                        </>
                       ) : (
                         publisher.name
                       )}
-                    </span>
+                    </React.Fragment>
                   ))}
-              </div>
-              <div className="space-y-1 flex flex-wrap gap-2 items-center">
-                <strong className="text-slate-600">Platforms:</strong>
-                {game.platforms &&
-                  game.platforms.map((platform, index) => (
-                    <Platform type={platform} key={index} />
-                  ))}
-              </div>
-              <div className="space-y-1 flex flex-wrap gap-2 items-center">
-                <strong className="text-slate-600">Available on:</strong>
-                {game.storeLinks &&
+              </MetaInfo>
+              <MetaInfo title={t("game.platforms")}>
+                <div className="flex flex-wrap gap-2">
+                  {game.platforms &&
+                    game.platforms.map((platform, index) => (
+                      <Platform type={platform} key={index} />
+                    ))}
+                </div>
+                {/* {game.storeLinks &&
                   game.storeLinks.map((storeLink, index) => {
                     return (
                       <StoreLink
@@ -148,8 +149,8 @@ export const GameDialog = ({
                         key={index}
                       />
                     );
-                  })}
-              </div>
+                  })} */}
+              </MetaInfo>
             </>
           )}
         </div>

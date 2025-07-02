@@ -14,7 +14,25 @@
     "title": "Title",
     "description": "Description",
     "genre": "Genre",
+    "genres": {
+      "action": "Action",
+      "adventure": "Adventure",
+      "rpg": "RPG",
+      "strategy": "Strategy",
+      "simulation": "Simulation",
+      "platformer": "Platformer",
+      "shooter": "Shooter",
+      "puzzle": "Puzzle",
+      "racing": "Racing",
+      "indie": "Indie",
+      "sandbox": "Sandbox",
+      "arcade": "Arcade",
+      "casual": "Casual",
+      "multiplayer": "Multiplayer",
+      "single-player": "Single Player"
+    },
     "developer": "Developer",
-    "publisher": "Publisher"
+    "publisher": "Publisher",
+    "platforms": "Available on"
   }
 }

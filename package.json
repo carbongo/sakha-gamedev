@@ -4,7 +4,8 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "generate-games-data": "node scripts/generate-games-data.cjs",
+    "ggd": "node scripts/generate-games-data.cjs",
+    "generate-games-data": "npm run ggd",
     "dev": "vite",
     "build": "node scripts/generate-games-data.cjs && tsc -b && vite build",
     "lint": "eslint .",

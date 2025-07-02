@@ -2,7 +2,7 @@
 title: Urban Jungle
 description: In Urban Jungle, you decorate small houses and apartments with plants and transform them from concrete boxes into a green haven. Through the environment you will be able to follow the life story of our protagonist. She will grow up before your eyes, change places and grow as a person and plant lover. Will you be able to fulfil her dream of a perfect garden?
 released: 2025-03-21
-genre: Cozy, Puzzle, Simulation
+genre: Cozy
 tags:
   - Cozy
   - Puzzle
