@@ -1,12 +1,11 @@
-import type { IconType } from "@icons-pack/react-simple-icons";
+import type { IconDefinition } from "@fortawesome/free-brands-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { clsx } from "clsx";
 import React from "react";
 
 interface ButtonProps extends React.HTMLAttributes<HTMLElement> {
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  iconLeft?: IconType | ((props: any) => React.JSX.Element);
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  iconRight?: IconType | ((props: any) => React.JSX.Element);
+  iconLeft?: IconDefinition;
+  iconRight?: IconDefinition;
   iconRightClassName?: string;
   iconLeftClassName?: string;
   onClick?: () => void;
@@ -17,8 +16,8 @@ interface ButtonProps extends React.HTMLAttributes<HTMLElement> {
 }
 
 const Button: React.FC<ButtonProps> = ({
-  iconLeft: IconLeft,
-  iconRight: IconRight,
+  iconLeft,
+  iconRight,
   iconRightClassName,
   iconLeftClassName,
   onClick,
@@ -29,7 +28,7 @@ const Button: React.FC<ButtonProps> = ({
   ...props
 }) => {
   const ButtonTag = href ? "a" : "button";
-  const iconClasses = clsx("w-6 h-6 text-slate-100");
+  const iconClasses = clsx("!w-4 !h-4 text-slate-100");
   const buttonClasses = {
     primary:
       "bg-slate-400 text-slate-100 hover:outline hover:outline-slate-300 hover:opacity-90 transition-opacity duration-150",
@@ -50,9 +49,10 @@ const Button: React.FC<ButtonProps> = ({
       rel={href ? "noopener noreferrer" : undefined}
       {...props}
     >
-      {IconLeft && (
+      {iconLeft && (
         <span className="mr-2">
-          <IconLeft
+          <FontAwesomeIcon
+            icon={iconLeft}
             className={
               iconClasses + (iconLeftClassName ? " " + iconLeftClassName : "")
             }
@@ -60,9 +60,10 @@ const Button: React.FC<ButtonProps> = ({
         </span>
       )}
       {children}
-      {IconRight && (
+      {iconRight && (
         <span className="ml-2">
-          <IconRight
+          <FontAwesomeIcon
+            icon={iconRight}
             className={
               iconClasses + (iconRightClassName ? " " + iconRightClassName : "")
             }

@@ -1,12 +1,9 @@
-import { SiGithub, SiTelegram } from "@icons-pack/react-simple-icons";
 import Button from "@elements/Button";
-import {
-  ArrowDropDown,
-  Translate,
-} from "@nine-thirty-five/material-symbols-react/outlined";
 import { useTranslation } from "react-i18next";
 import LanguageDialog from "@ui/LanguageDialog";
 import { useState } from "react";
+import { faGithub, faTelegram } from "@fortawesome/free-brands-svg-icons";
+import { faArrowDown, faLanguage } from "@fortawesome/free-solid-svg-icons";
 
 export const Header = () => {
   const { t } = useTranslation();
@@ -28,14 +25,14 @@ export const Header = () => {
         <div className="flex gap-4 flex-col sm:flex-row w-full">
           <Button
             href="https://t.me/gamedev_yakutia"
-            iconRight={SiTelegram}
+            iconRight={faTelegram}
             className="flex-grow md:flex-grow-0"
           >
             {t("header.links.telegram")}
           </Button>
           <Button
             href="https://github.com/carbongo/sakha-gamedev"
-            iconRight={SiGithub}
+            iconRight={faGithub}
             className="flex-grow md:flex-grow-0"
           >
             {t("header.links.github")}
@@ -44,8 +41,8 @@ export const Header = () => {
         <div className="flex-col sm:flex-row m-auto md:m-0 relative">
           <LanguageDialog open={languagesOpen} onClose={handleLanguagesClick} />
           <Button
-            iconLeft={Translate}
-            iconRight={ArrowDropDown}
+            iconLeft={faLanguage}
+            iconRight={faArrowDown}
             iconLeftClassName="text-slate-500"
             iconRightClassName="-mr-2 text-slate-500"
             appearance="secondary"

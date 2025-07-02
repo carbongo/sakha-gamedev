@@ -1,3 +1,9 @@
+import {
+  SiAppstore,
+  SiEpicgames,
+  SiGoogleplay,
+  SiSteam,
+} from "@icons-pack/react-simple-icons";
 import clsx from "clsx";
 
 interface StoreLink extends React.HTMLAttributes<HTMLDivElement> {
@@ -6,6 +12,15 @@ interface StoreLink extends React.HTMLAttributes<HTMLDivElement> {
 }
 
 export const StoreLink = ({ type, link, ...props }: StoreLink) => {
+  const iconsMap = {
+    Steam: SiSteam,
+    "Epic Games": SiEpicgames,
+    "App Store": SiAppstore,
+    "Google Play": SiGoogleplay,
+  };
+
+  const IconComponent = iconsMap[type as keyof typeof iconsMap];
+
   return (
     <a href={link} target="_blank" rel="noopener noreferrer">
       <div
@@ -14,7 +29,7 @@ export const StoreLink = ({ type, link, ...props }: StoreLink) => {
         ])}
         {...props}
       >
-        {type}
+        {IconComponent ? <IconComponent /> : type}
       </div>
     </a>
   );
