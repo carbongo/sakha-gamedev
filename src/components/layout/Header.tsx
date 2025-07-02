@@ -3,7 +3,7 @@ import { useTranslation } from "react-i18next";
 import LanguageDialog from "@ui/LanguageDialog";
 import { useState } from "react";
 import { faGithub, faTelegram } from "@fortawesome/free-brands-svg-icons";
-import { faArrowDown, faLanguage } from "@fortawesome/free-solid-svg-icons";
+import { faArrowDown, faGlobe } from "@fortawesome/free-solid-svg-icons";
 
 export const Header = () => {
   const { t } = useTranslation();
@@ -41,7 +41,7 @@ export const Header = () => {
         <div className="flex-col sm:flex-row m-auto md:m-0 relative">
           <LanguageDialog open={languagesOpen} onClose={handleLanguagesClick} />
           <Button
-            iconLeft={faLanguage}
+            iconLeft={faGlobe}
             iconRight={faArrowDown}
             iconLeftClassName="text-slate-500"
             iconRightClassName="-mr-2 text-slate-500"

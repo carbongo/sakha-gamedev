@@ -1,9 +1,10 @@
 import {
-  SiAppstore,
-  SiEpicgames,
-  SiGoogleplay,
-  SiSteam,
-} from "@icons-pack/react-simple-icons";
+  faAppStore,
+  faGooglePlay,
+  faSteam,
+} from "@fortawesome/free-brands-svg-icons";
+import { faChevronDown } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import clsx from "clsx";
 
 interface StoreLink extends React.HTMLAttributes<HTMLDivElement> {
@@ -13,13 +14,13 @@ interface StoreLink extends React.HTMLAttributes<HTMLDivElement> {
 
 export const StoreLink = ({ type, link, ...props }: StoreLink) => {
   const iconsMap = {
-    Steam: SiSteam,
-    "Epic Games": SiEpicgames,
-    "App Store": SiAppstore,
-    "Google Play": SiGoogleplay,
+    Steam: faSteam,
+    "Epic Games": faChevronDown,
+    "App Store": faAppStore,
+    "Google Play": faGooglePlay,
   };
 
-  const IconComponent = iconsMap[type as keyof typeof iconsMap];
+  const icon = iconsMap[type as keyof typeof iconsMap];
 
   return (
     <a href={link} target="_blank" rel="noopener noreferrer">
@@ -29,7 +30,7 @@ export const StoreLink = ({ type, link, ...props }: StoreLink) => {
         ])}
         {...props}
       >
-        {IconComponent ? <IconComponent /> : type}
+        {icon ? <FontAwesomeIcon icon={icon} /> : type}
       </div>
     </a>
   );
