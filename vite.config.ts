@@ -16,7 +16,6 @@ function get_paths_from_tsconfig() {
   for (const [key, value] of Object.entries(tsconfig.compilerOptions.paths)) {
     aliases[key] = path.resolve("./" + value?.[0]);
   }
-  console.log(aliases);
   return aliases;
 }
 
