@@ -13,10 +13,12 @@ export const MetaInfo = ({ title, children, ...props }: MetaInfoProps) => {
     (title || children) && (
       <div className="flex flex-wrap gap-2" {...props}>
         {title && (
-          <Typography base normal className="text-slate-600">
-            {title}:
-          </Typography>
-        )}{" "}
+          <>
+            <Typography base normal className="text-slate-600">
+              {title}:
+            </Typography>{" "}
+          </>
+        )}
         <Typography base normal className="text-slate-400">
           {children && children}
         </Typography>
