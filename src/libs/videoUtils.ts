@@ -5,7 +5,7 @@ export const getEmbedUrl = (url: string): string => {
       /(?:youtube\.com\/watch\?v=|youtu\.be\/)([^\s&?]+)/
     );
     if (videoIdMatch?.[1]) {
-      return `https://www.youtube.com/embed/${videoIdMatch[1]}?autoplay=1`;
+      return `https://www.youtube.com/embed/${videoIdMatch[1]}?autoplay=1&mute=1`;
     }
   }
 
